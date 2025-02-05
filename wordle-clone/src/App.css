@@ -1,0 +1,188 @@
+:root {
+  --bg-color: #ffffff; /* Light mode background */
+  --text-color: #000000;
+  --tile-bg: #ddd;
+  --green: #6aaa64;
+  --yellow: #c9b458;
+  --gray: #787c7e;
+  --bg-image-light: url('https://res.cloudinary.com/dcr2fwzyk/image/upload/v1738731874/unfinished-white-jigsaw_pawrbp.jpg'); /* Light mode image */
+  --bg-image-dark: url('https://res.cloudinary.com/dcr2fwzyk/image/upload/v1738732647/3194173_gjpie9.jpg'); /* Dark mode image */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+  background-image: var(--bg-image-light);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark mode */
+.dark {
+  --bg-color: #121212; /* Dark background */
+  --text-color: #ffffff;
+  --tile-bg: #333;
+  background-image: var(--bg-image-dark);
+}
+
+
+
+
+.wordle-container {
+  padding: 10px;
+  background-color: transparent; /* Keep it transparent to show the background */
+  color: var(--text-color);
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.word{
+  border: 2px solid var(--text-color);
+  
+  width:80px;
+padding:5px;
+  text-align:center;
+  color:var(--green);
+}
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px auto;
+  width: 200px;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--tile-bg);
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.green {
+  background-color: var(--green);
+  color: white;
+}
+
+.yellow {
+  background-color: var(--yellow);
+  color: black;
+}
+
+.gray {
+  background-color: var(--gray);
+  color: white;
+}
+
+.word-input {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.input-box {
+  width: 120px;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid var(--text-color);
+  background-color: var(--tile-bg);
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+.submit-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background: var(--yellow);
+}
+
+.message {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.new-game-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Nabla:EDPT,EHLT@30..200,24&display=swap");
+
+
+
+h1 {
+  
+	font-size: 4rem;
+	font-family: Nabla;
+}
+
+@font-palette-values --Nabla {
+	font-family: Nabla;
+	base-palette: 2;
+}
+
+span {
+	animation: depth 1s ease-in-out alternate infinite;
+	position: relative;
+	display: inline-block;
+	font-variation-settings: "EDPT" 30;
+	font-palette: --Nabla;
+	@for $i from 1 through 12 {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * 0.1s;
+		}
+	}
+}
+
+@keyframes depth {
+	0% {
+		transform: translatex(0) translatey(0);
+	}
+	100% {
+		font-variation-settings: "EDPT" 200;
+		transform: translatex(0.15em) translatey(0.1em);
+	}
+}
+
+
+
+
